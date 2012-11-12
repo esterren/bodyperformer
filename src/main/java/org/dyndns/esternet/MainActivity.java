@@ -27,7 +27,7 @@ public class MainActivity extends ListActivity {
 		Log.i(TAG, "onCreate");
 		// setContentView(R.layout.main);
 
-		String[] values = new String[] { "Track Route", "Create Activity", "Change weight" };
+		String[] values = new String[] { "Scan Product", "Create Entry", "Change weight" };
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.main, R.id.label, values);
 		setListAdapter(adapter);
 	}
