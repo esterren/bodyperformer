@@ -46,9 +46,10 @@
                     <sdk>
                         <platform>16</platform>
                     </sdk>
-                                        <emulator>
+                    <emulator>
                         <avd>my-adv</avd>
                     </emulator>
+                    
                                         <undeployBeforeDeploy>true</undeployBeforeDeploy>
                 </configuration>
                 <extensions>true</extensions>
