@@ -1,5 +1,11 @@
 package org.dyndns.esternet;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dyndns.esternet.db.DatabaseManager;
+import org.dyndns.esternet.model.TopicList;
+
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,8 +33,19 @@ public class MainActivity extends ListActivity {
 		Log.i(TAG, "onCreate");
 		// setContentView(R.layout.main);
 
-		String[] values = new String[] { "Scan Product", "Create Entry", "Change weight" };
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.main, R.id.label, values);
+		DatabaseManager.init(this);
+
+		// String[] values = new String[] { "Scan Product", "Create Entry",
+		// "Change weight" };
+		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		// R.layout.main, R.id.label, values);
+		final List<TopicList> topicList = DatabaseManager.getInstance().getAllTopicLists();
+		List<String> titles = new ArrayList<String>();
+		for (TopicList t1 : topicList) {
+			titles.add(t1.getName());
+		}
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.main, R.id.label, titles);
+
 		setListAdapter(adapter);
 	}
 
