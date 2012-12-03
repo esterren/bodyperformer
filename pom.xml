@@ -30,6 +30,11 @@
         	<artifactId>ormlite-core</artifactId>
         	<version>4.42</version>
         </dependency>
+        <dependency>
+        	<groupId>org.simpleframework</groupId>
+        	<artifactId>simple-xml</artifactId>
+        	<version>2.6.8</version>
+        </dependency>
     </dependencies>
 
     <build>

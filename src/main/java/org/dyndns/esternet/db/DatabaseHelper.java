@@ -87,10 +87,13 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	}
 
 	private void insertStaticTopicListEntries() {
-		TopicList tl = new TopicList();
-		tl.setName("Route tracking");
+		TopicList tl1 = new TopicList();
+		tl1.setName("Route tracking");
+		TopicList tl2 = new TopicList();
+		tl2.setName("Change weight");
 		try {
-			this.getTopicListDao().create(tl);
+			this.getTopicListDao().create(tl1);
+			this.getTopicListDao().create(tl2);
 		} catch (java.sql.SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
